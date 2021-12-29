@@ -18,7 +18,7 @@ export class RomanNumberConverterDecomposeNumberStrategy {
                 arabicNumber = arabicNumber - romanValue;
             }
         })
-        if (arabicNumber < 0) return this.RomanCharacter[1] + romanNumber;
+        if (arabicNumber < 0) return  romanNumber.slice( 0,romanNumber.length-1) + this.RomanCharacter[1] +  romanNumber.slice( romanNumber.length-1);
         romanNumber += this.RomanCharacter[1].repeat(arabicNumber);
         return romanNumber;
     };
