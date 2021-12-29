@@ -146,6 +146,11 @@ describe('convert to Roman Numeral  should', () => {
         expect(romanNumeral).toBe('D');
     });
 
+    test('gives CD output for 400 as input', () => {
+        let romanNumeral = converter.convertToRomanNumeral(400);
+        expect(romanNumeral).toBe('CD');
+    });
+
 
 
 
