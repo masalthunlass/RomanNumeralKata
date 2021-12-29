@@ -20,20 +20,17 @@ export class RomanNumeralConverter {
                 romanNumber += RomanCharacter[romanCharacterValue];
                 arabicNumber = arabicNumber-romanCharacterValue;
             }
-
             if (arabicNumber >= RomanNumeralConverter.descendingRomanCharacterValues[index+1] * 4) {
                 romanNumber +=  RomanCharacter[RomanNumeralConverter.descendingRomanCharacterValues[index+1]]+RomanCharacter[romanCharacterValue];
                 arabicNumber = arabicNumber - (romanCharacterValue - RomanNumeralConverter.descendingRomanCharacterValues[index+1]);
             }
-            if (arabicNumber === 9) {
-                romanNumber +=  RomanCharacter[1]+RomanCharacter[10];
-                arabicNumber = arabicNumber - 9;
+
+            if (arabicNumber >= (RomanNumeralConverter.descendingRomanCharacterValues[index+2] * 4) + RomanNumeralConverter.descendingRomanCharacterValues[index+1]) {
+                romanNumber +=  RomanCharacter[RomanNumeralConverter.descendingRomanCharacterValues[index+2]]+RomanCharacter[romanCharacterValue];
+                arabicNumber = arabicNumber - ((RomanNumeralConverter.descendingRomanCharacterValues[index+2] * 4) + RomanNumeralConverter.descendingRomanCharacterValues[index+1]);
             }
 
-            if (arabicNumber === 90) {
-                romanNumber +=  RomanCharacter[10]+RomanCharacter[100];
-                arabicNumber = arabicNumber - 90;
-            }
+
 
         })
         return romanNumber;
