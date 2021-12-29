@@ -13,25 +13,20 @@ export class RomanNumeralConverter {
     convertToRomanNumeral = (arabicNumber: ArabicNumber): RomanNumber => {
         let romanNumber = '';
 
-        if (arabicNumber >= 10) {
-            romanNumber += RomanCharacter[10];
-            arabicNumber= arabicNumber-10;
-        }
-        if (arabicNumber === 9) {
-            romanNumber +=  RomanCharacter[1]+RomanCharacter[10];
-            arabicNumber = arabicNumber - 9;
-        }
-        if (arabicNumber === 4) {
-            romanNumber +=  RomanCharacter[1]+RomanCharacter[5];
-            arabicNumber = arabicNumber - 4;
-        }
-        if (arabicNumber >= 5) {
-            romanNumber += RomanCharacter[5];
-            arabicNumber= arabicNumber-5;
-        }
-        for (let i = 0; i < arabicNumber;i++) {
-            romanNumber += RomanCharacter[1];
-        }
+      [10, 5, 1].forEach( romanCharacterValue => {
+            while (arabicNumber >= romanCharacterValue) {
+                romanNumber += RomanCharacter[romanCharacterValue];
+                arabicNumber = arabicNumber-romanCharacterValue;
+            }
+            if (arabicNumber === 9) {
+                romanNumber +=  RomanCharacter[1]+RomanCharacter[10];
+                arabicNumber = arabicNumber - 9;
+            }
+            if (arabicNumber === 4) {
+                romanNumber +=  RomanCharacter[1]+RomanCharacter[5];
+                arabicNumber = arabicNumber - 4;
+            }
+        })
         return romanNumber;
     };
 
