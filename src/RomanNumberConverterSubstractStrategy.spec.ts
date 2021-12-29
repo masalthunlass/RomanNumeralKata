@@ -1,10 +1,10 @@
-import {RomanNumberConverter} from "./RomanNumberConverter";
+import {RomanNumberConverterSubstractStrategy} from "./RomanNumberConverterSubstractStrategy";
 
 describe('convert to Roman Numeral  should', () => {
-    let converter: RomanNumberConverter;
+    let converter: RomanNumberConverterSubstractStrategy;
 
     beforeEach(() => {
-        converter = new RomanNumberConverter();
+        converter = new RomanNumberConverterSubstractStrategy();
     })
 
 

@@ -7,7 +7,7 @@ type RomanNumber = string;
 type ArabicNumber = number;
 
 
-export class RomanNumberConverter {
+export class RomanNumberConverterSubstractStrategy {
 
     static readonly  descendingRomanCharacterValues = [
         RomanCharacter.M,
@@ -19,19 +19,19 @@ export class RomanNumberConverter {
     convertToRomanNumber = (arabicNumber: ArabicNumber): RomanNumber => {
         let romanNumber = '';
 
-        RomanNumberConverter.descendingRomanCharacterValues.forEach( (romanCharacterValue, index) => {
+        RomanNumberConverterSubstractStrategy.descendingRomanCharacterValues.forEach( (romanCharacterValue, index) => {
 
             while (arabicNumber >= romanCharacterValue) {
                 romanNumber += RomanCharacter[romanCharacterValue];
                 arabicNumber = arabicNumber-romanCharacterValue;
             }
             if (this.is4xxx(index, arabicNumber, romanCharacterValue)) {
-                romanNumber +=  RomanCharacter[RomanNumberConverter.descendingRomanCharacterValues[index+1]]+RomanCharacter[romanCharacterValue];
-                arabicNumber = arabicNumber - (romanCharacterValue - RomanNumberConverter.descendingRomanCharacterValues[index+1]);
+                romanNumber +=  RomanCharacter[RomanNumberConverterSubstractStrategy.descendingRomanCharacterValues[index+1]]+RomanCharacter[romanCharacterValue];
+                arabicNumber = arabicNumber - (romanCharacterValue - RomanNumberConverterSubstractStrategy.descendingRomanCharacterValues[index+1]);
             }
             if (this.is9xxx(index, arabicNumber, romanCharacterValue)) {
-                romanNumber +=  RomanCharacter[RomanNumberConverter.descendingRomanCharacterValues[index+2]]+RomanCharacter[romanCharacterValue];
-                arabicNumber = arabicNumber - (romanCharacterValue - RomanNumberConverter.descendingRomanCharacterValues[index+2]);
+                romanNumber +=  RomanCharacter[RomanNumberConverterSubstractStrategy.descendingRomanCharacterValues[index+2]]+RomanCharacter[romanCharacterValue];
+                arabicNumber = arabicNumber - (romanCharacterValue - RomanNumberConverterSubstractStrategy.descendingRomanCharacterValues[index+2]);
             }
 
 
@@ -41,11 +41,11 @@ export class RomanNumberConverter {
 
 
     private is9xxx(index: number, arabicNumber: number, romanCharacterValue: number): boolean {
-        return index % 2 == 0 && arabicNumber >= romanCharacterValue - RomanNumberConverter.descendingRomanCharacterValues[index + 2];
+        return index % 2 == 0 && arabicNumber >= romanCharacterValue - RomanNumberConverterSubstractStrategy.descendingRomanCharacterValues[index + 2];
     }
 
     private is4xxx(index: number, arabicNumber: number, romanCharacterValue: number): boolean {
-        return index % 2 == 1 && arabicNumber >= romanCharacterValue - RomanNumberConverter.descendingRomanCharacterValues[index + 1];
+        return index % 2 == 1 && arabicNumber >= romanCharacterValue - RomanNumberConverterSubstractStrategy.descendingRomanCharacterValues[index + 1];
     }
 }
 
