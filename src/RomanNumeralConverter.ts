@@ -1,5 +1,5 @@
 enum RomanCharacter {
-    I=1, V = 5, X = 10
+    I=1, V = 5, X = 10, L = 50
 
 }
 
@@ -13,7 +13,7 @@ export class RomanNumeralConverter {
     convertToRomanNumeral = (arabicNumber: ArabicNumber): RomanNumber => {
         let romanNumber = '';
 
-      [10, 5, 1].forEach( romanCharacterValue => {
+      [50,10, 5, 1].forEach( romanCharacterValue => {
             while (arabicNumber >= romanCharacterValue) {
                 romanNumber += RomanCharacter[romanCharacterValue];
                 arabicNumber = arabicNumber-romanCharacterValue;
