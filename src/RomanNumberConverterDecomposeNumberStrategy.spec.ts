@@ -11,4 +11,9 @@ describe('convert to Roman Numeral  should', () => {
         let romanNumeral = converter.convertToRomanNumber(1);
         expect(romanNumeral).toBe('I');
     });
+
+    test('gives II output for 2 as input', () => {
+        let romanNumeral = converter.convertToRomanNumber(2);
+        expect(romanNumeral).toBe('II');
+    });
 })
