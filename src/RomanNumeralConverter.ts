@@ -14,24 +14,22 @@ export class RomanNumeralConverter {
     convertToRomanNumeral = (arabicNumber: ArabicNumber): RomanNumber => {
         let romanNumber = '';
 
-        RomanNumeralConverter.descendingRomanCharacterValues.forEach( romanCharacterValue => {
+        RomanNumeralConverter.descendingRomanCharacterValues.forEach( (romanCharacterValue, index) => {
+
             while (arabicNumber >= romanCharacterValue) {
                 romanNumber += RomanCharacter[romanCharacterValue];
                 arabicNumber = arabicNumber-romanCharacterValue;
+            }
+
+            if (arabicNumber >= RomanNumeralConverter.descendingRomanCharacterValues[index+1] * 4) {
+                romanNumber +=  RomanCharacter[RomanNumeralConverter.descendingRomanCharacterValues[index+1]]+RomanCharacter[romanCharacterValue];
+                arabicNumber = arabicNumber - (romanCharacterValue - RomanNumeralConverter.descendingRomanCharacterValues[index+1]);
             }
             if (arabicNumber === 9) {
                 romanNumber +=  RomanCharacter[1]+RomanCharacter[10];
                 arabicNumber = arabicNumber - 9;
             }
-            if (arabicNumber === 4) {
-                romanNumber +=  RomanCharacter[1]+RomanCharacter[5];
-                arabicNumber = arabicNumber - 4;
-            }
 
-            if (arabicNumber === 40) {
-                romanNumber +=  RomanCharacter[10]+RomanCharacter[50];
-                arabicNumber = arabicNumber - 40;
-            }
         })
         return romanNumber;
     };
