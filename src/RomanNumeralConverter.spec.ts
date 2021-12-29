@@ -34,6 +34,11 @@ describe('convert to Roman Numeral  should', () => {
         expect(romanNumeral).toBe('V');
     });
 
+    test('gives VI output for 6 as input', () => {
+        let romanNumeral = converter.convertToRomanNumeral(6);
+        expect(romanNumeral).toBe('VI');
+    });
+
 
 
 
