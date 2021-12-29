@@ -7,9 +7,11 @@ export class RomanNumeralConverter {
 
 
     convertToRomanNumeral = (arabicNumber: ArabicNumber): RomanNumber => {
-        if (arabicNumber === 3) return 'III';
-        if (arabicNumber === 2) return 'II';
-        return 'I';
+        let romanNumber = '';
+        for(let i = 0; i < arabicNumber;i++) {
+            romanNumber += 'I';
+        }
+        return romanNumber;
 
     };
 
