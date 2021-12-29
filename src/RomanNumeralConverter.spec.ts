@@ -24,6 +24,13 @@ describe('convert to Roman Numeral  should', () => {
     });
 
 
+    test('gives IV output for 4 as input', () => {
+        let romanNumeral = converter.convertToRomanNumeral(4);
+        expect(romanNumeral).toBe('IV');
+    });
+
+
+
 
 })
 
