@@ -39,6 +39,17 @@ describe('convert to Roman Numeral  should', () => {
         expect(romanNumeral).toBe('VI');
     });
 
+    test('gives VII output for 7 as input', () => {
+        let romanNumeral = converter.convertToRomanNumeral(7);
+        expect(romanNumeral).toBe('VII');
+    });
+
+    test('gives VIII output for 8 as input', () => {
+        let romanNumeral = converter.convertToRomanNumeral(8);
+        expect(romanNumeral).toBe('VIII');
+    });
+
+
 
 
 
