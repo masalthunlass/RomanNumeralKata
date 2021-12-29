@@ -83,6 +83,24 @@ describe('convert to Roman Numeral  should', () => {
         expect(romanNumeral).toBe('XV');
     });
 
+    test('gives XVI output for 16 as input', () => {
+        let romanNumeral = converter.convertToRomanNumeral(16);
+        expect(romanNumeral).toBe('XVI');
+    });
+
+    test('gives XVII output for 17 as input', () => {
+        let romanNumeral = converter.convertToRomanNumeral(17);
+        expect(romanNumeral).toBe('XVII');
+    });
+
+    test('gives XVIII output for 18 as input', () => {
+        let romanNumeral = converter.convertToRomanNumeral(18);
+        expect(romanNumeral).toBe('XVIII');
+    });
+
+
+
+
 
 
 
