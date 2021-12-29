@@ -167,6 +167,12 @@ describe('convert to Roman Numeral  should', () => {
         expect(romanNumeral).toBe('CM');
     });
 
+    test('gives MCMLXXXVII output for 1987 as input', () => {
+        let romanNumeral = converter.convertToRomanNumeral(1987);
+        expect(romanNumeral).toBe('MCMLXXXVII');
+    });
+
+
 
 
 
