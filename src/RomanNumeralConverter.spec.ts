@@ -130,6 +130,16 @@ describe('convert to Roman Numeral  should', () => {
         expect(romanNumeral).toBe('XC');
     });
 
+    test('gives XCV output for 95 as input', () => {
+        let romanNumeral = converter.convertToRomanNumeral(95);
+        expect(romanNumeral).toBe('XCV');
+    });
+
+
+    test('gives LXXV output for 75 as input', () => {
+        let romanNumeral = converter.convertToRomanNumeral(75);
+        expect(romanNumeral).toBe('LXXV');
+    });
 
 
 
