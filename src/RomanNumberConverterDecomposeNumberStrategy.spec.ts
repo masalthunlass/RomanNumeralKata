@@ -40,4 +40,9 @@ describe('convert to Roman Numeral  should', () => {
         expect(romanNumeral).toBe('VIII');
     });
 
+    test('gives X output for 10 as input', () => {
+        let romanNumeral = converter.convertToRomanNumber(10);
+        expect(romanNumeral).toBe('X');
+    });
+
 })
