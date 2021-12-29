@@ -13,6 +13,12 @@ describe('convert to Roman Numeral  should', () => {
         expect(romanNumeral).toBe('I');
     });
 
+    test('gives II output for 2 as input', () => {
+        let romanNumeral = converter.convertToRomanNumeral(2);
+        expect(romanNumeral).toBe('II');
+    });
+
+
 
 })
 

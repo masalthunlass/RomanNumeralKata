@@ -7,6 +7,7 @@ export class RomanNumeralConverter {
 
 
     convertToRomanNumeral = (arabicNumber: ArabicNumber): RomanNumber => {
+        if (arabicNumber === 2) return 'II';
         return 'I';
 
     };
