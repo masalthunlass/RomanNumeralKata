@@ -109,6 +109,11 @@ describe('convert to Roman Numeral  should', () => {
         expect(romanNumeral).toBe('L');
     });
 
+    test('gives XL output for 40 as input', () => {
+        let romanNumeral = converter.convertToRomanNumeral(40);
+        expect(romanNumeral).toBe('XL');
+    });
+
 
 
 

@@ -27,6 +27,11 @@ export class RomanNumeralConverter {
                 romanNumber +=  RomanCharacter[1]+RomanCharacter[5];
                 arabicNumber = arabicNumber - 4;
             }
+
+            if (arabicNumber === 40) {
+                romanNumber +=  RomanCharacter[10]+RomanCharacter[50];
+                arabicNumber = arabicNumber - 40;
+            }
         })
         return romanNumber;
     };
