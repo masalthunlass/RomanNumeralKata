@@ -120,6 +120,12 @@ describe('convert to Roman Numeral  should', () => {
     });
 
 
+    test('gives C output for 100 as input', () => {
+        let romanNumeral = converter.convertToRomanNumeral(100);
+        expect(romanNumeral).toBe('C');
+    });
+
+
 
 
 
