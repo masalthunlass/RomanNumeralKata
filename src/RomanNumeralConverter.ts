@@ -30,6 +30,11 @@ export class RomanNumeralConverter {
                 arabicNumber = arabicNumber - 9;
             }
 
+            if (arabicNumber === 90) {
+                romanNumber +=  RomanCharacter[10]+RomanCharacter[100];
+                arabicNumber = arabicNumber - 90;
+            }
+
         })
         return romanNumber;
     };

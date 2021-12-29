@@ -125,6 +125,12 @@ describe('convert to Roman Numeral  should', () => {
         expect(romanNumeral).toBe('C');
     });
 
+    test('gives XC output for 90 as input', () => {
+        let romanNumeral = converter.convertToRomanNumeral(90);
+        expect(romanNumeral).toBe('XC');
+    });
+
+
 
 
 
