@@ -114,6 +114,12 @@ describe('convert to Roman Numeral  should', () => {
         expect(romanNumeral).toBe('XL');
     });
 
+    test('gives XLV output for 45 as input', () => {
+        let romanNumeral = converter.convertToRomanNumeral(45);
+        expect(romanNumeral).toBe('XLV');
+    });
+
+
 
 
 
