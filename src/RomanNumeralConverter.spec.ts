@@ -152,6 +152,12 @@ describe('convert to Roman Numeral  should', () => {
     });
 
 
+    test('gives LXXXVI output for 86 as input', () => {
+        let romanNumeral = converter.convertToRomanNumeral(86);
+        expect(romanNumeral).toBe('LXXXVI');
+    });
+
+
 
 
 

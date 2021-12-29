@@ -26,9 +26,9 @@ export class RomanNumeralConverter {
                 arabicNumber = arabicNumber - (romanCharacterValue - RomanNumeralConverter.descendingRomanCharacterValues[index+1]);
             }
 
-            if (arabicNumber >= (RomanNumeralConverter.descendingRomanCharacterValues[index+2] * 4) + RomanNumeralConverter.descendingRomanCharacterValues[index+1]) {
+            if (index % 2 && arabicNumber >= (RomanNumeralConverter.descendingRomanCharacterValues[index+2] * 4) + RomanNumeralConverter.descendingRomanCharacterValues[index+1]) {
                 romanNumber +=  RomanCharacter[RomanNumeralConverter.descendingRomanCharacterValues[index+2]]+RomanCharacter[romanCharacterValue];
-                arabicNumber = arabicNumber - ((RomanNumeralConverter.descendingRomanCharacterValues[index+2] * 4) + RomanNumeralConverter.descendingRomanCharacterValues[index+1]);
+                arabicNumber = arabicNumber - (romanCharacterValue - RomanNumeralConverter.descendingRomanCharacterValues[index+2]);
             }
 
 
