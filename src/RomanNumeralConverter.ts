@@ -1,5 +1,5 @@
 enum RomanCharacter {
-    I=1, V = 5, X = 10, L = 50, C= 100
+    I=1, V = 5, X = 10, L = 50, C= 100, D=500
 
 }
 
@@ -9,7 +9,8 @@ type ArabicNumber = number;
 
 export class RomanNumeralConverter {
 
-    static readonly  descendingRomanCharacterValues = [RomanCharacter.C, RomanCharacter.L, RomanCharacter.X, RomanCharacter.V, RomanCharacter.I ];
+    static readonly  descendingRomanCharacterValues = [RomanCharacter.D, RomanCharacter.C, RomanCharacter.L, RomanCharacter.X,
+        RomanCharacter.V, RomanCharacter.I ];
 
     convertToRomanNumeral = (arabicNumber: ArabicNumber): RomanNumber => {
         let romanNumber = '';
