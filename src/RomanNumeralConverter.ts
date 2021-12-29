@@ -9,11 +9,12 @@ type ArabicNumber = number;
 
 export class RomanNumeralConverter {
 
+    static readonly  descendingRomanCharacterValues = [RomanCharacter.L, RomanCharacter.X, RomanCharacter.V, RomanCharacter.I ];
 
     convertToRomanNumeral = (arabicNumber: ArabicNumber): RomanNumber => {
         let romanNumber = '';
 
-      [50,10, 5, 1].forEach( romanCharacterValue => {
+        RomanNumeralConverter.descendingRomanCharacterValues.forEach( romanCharacterValue => {
             while (arabicNumber >= romanCharacterValue) {
                 romanNumber += RomanCharacter[romanCharacterValue];
                 arabicNumber = arabicNumber-romanCharacterValue;
