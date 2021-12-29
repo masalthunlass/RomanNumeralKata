@@ -13,10 +13,13 @@ export class RomanNumeralConverter {
     convertToRomanNumeral = (arabicNumber: ArabicNumber): RomanNumber => {
         let romanNumber = '';
 
-        if (arabicNumber === 9) return  RomanCharacter[1]+RomanCharacter[10];
         if (arabicNumber >= 10) {
             romanNumber += RomanCharacter[10];
             arabicNumber= arabicNumber-10;
+        }
+        if (arabicNumber === 9) {
+            romanNumber +=  RomanCharacter[1]+RomanCharacter[10];
+            arabicNumber = arabicNumber - 9;
         }
         if (arabicNumber === 4) {
             romanNumber +=  RomanCharacter[1]+RomanCharacter[5];

@@ -99,6 +99,12 @@ describe('convert to Roman Numeral  should', () => {
     });
 
 
+    test('gives XIX output for 19 as input', () => {
+        let romanNumeral = converter.convertToRomanNumeral(19);
+        expect(romanNumeral).toBe('XIX');
+    });
+
+
 
 
 
