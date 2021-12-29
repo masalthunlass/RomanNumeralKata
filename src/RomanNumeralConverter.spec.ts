@@ -157,9 +157,14 @@ describe('convert to Roman Numeral  should', () => {
         expect(romanNumeral).toBe('LXXXVI');
     });
 
-    test('gives M output for M as input', () => {
+    test('gives M output for 1000 as input', () => {
         let romanNumeral = converter.convertToRomanNumeral(1000);
         expect(romanNumeral).toBe('M');
+    });
+
+    test('gives CM output for 900 as input', () => {
+        let romanNumeral = converter.convertToRomanNumeral(900);
+        expect(romanNumeral).toBe('CM');
     });
 
 
