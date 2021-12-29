@@ -15,15 +15,15 @@ export class RomanNumeralConverter {
 
         if (arabicNumber === 9) return  RomanCharacter[1]+RomanCharacter[10];
         if (arabicNumber >= 10) {
-            romanNumber = RomanCharacter[10];
+            romanNumber += RomanCharacter[10];
             arabicNumber= arabicNumber-10;
         }
         if (arabicNumber === 4) {
             romanNumber +=  RomanCharacter[1]+RomanCharacter[5];
-            arabicNumber= arabicNumber - 4;
+            arabicNumber = arabicNumber - 4;
         }
         if (arabicNumber >= 5) {
-            romanNumber = RomanCharacter[5];
+            romanNumber += RomanCharacter[5];
             arabicNumber= arabicNumber-5;
         }
         for (let i = 0; i < arabicNumber;i++) {
