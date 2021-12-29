@@ -5,8 +5,13 @@ type ArabicNumber = number;
 export class RomanNumberConverterDecomposeNumberStrategy {
 
     convertToRomanNumber = (arabicNumber: ArabicNumber): RomanNumber => {
-        if (arabicNumber === 5) return 'V';
-        return 'I'.repeat(arabicNumber);
+        let romanNumber = '';
+        if (arabicNumber >= 5) {
+            romanNumber += 'V';
+            arabicNumber = arabicNumber - 5;
+        }
+         romanNumber +='I'.repeat(arabicNumber);
+        return romanNumber;
     };
 
 
