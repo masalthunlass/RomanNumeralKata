@@ -21,11 +21,10 @@ export class RomanNumeralConverter {
                 romanNumber += RomanCharacter[romanCharacterValue];
                 arabicNumber = arabicNumber-romanCharacterValue;
             }
-            if (arabicNumber >= RomanNumeralConverter.descendingRomanCharacterValues[index+1] * 4) {
+            if ((index % 2 == 1 && arabicNumber >= romanCharacterValue - RomanNumeralConverter.descendingRomanCharacterValues[index+1])) {
                 romanNumber +=  RomanCharacter[RomanNumeralConverter.descendingRomanCharacterValues[index+1]]+RomanCharacter[romanCharacterValue];
                 arabicNumber = arabicNumber - (romanCharacterValue - RomanNumeralConverter.descendingRomanCharacterValues[index+1]);
             }
-
             if (index % 2  == 0 && arabicNumber >= romanCharacterValue - RomanNumeralConverter.descendingRomanCharacterValues[index+2]) {
                 romanNumber +=  RomanCharacter[RomanNumeralConverter.descendingRomanCharacterValues[index+2]]+RomanCharacter[romanCharacterValue];
                 arabicNumber = arabicNumber - (romanCharacterValue - RomanNumeralConverter.descendingRomanCharacterValues[index+2]);
